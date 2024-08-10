@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <div className=" h-screen relative flex items-center justify-center pt-10 ">
+    <div className=" h-screen relative flex items-center justify-center pt-10 z-[-1]  ">
       <Image
         src="/hero/663cd119a16c36211dcff236_home-slide-1.png"
         layout="fill"
