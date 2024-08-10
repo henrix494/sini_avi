@@ -5,10 +5,17 @@ export default function GetBack() {
   return (
     <div className="h-auto min-h-[800px] flex flex-col lg:flex-row justify-center items-center p-6 lg:p-10 max-lg:gap-10">
       <div className="flex flex-col justify-start w-full lg:w-[600px] space-y-6 text-right lg:text-left max-lg:order-2  ">
-        <div>
+        <div className="relative">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-main-bg mb-4 text-right">
             !תחזרו למגרש שלכם
           </h1>
+          <Image
+            className=" absolute right-0 top-12"
+            src={"/underLine.svg"}
+            width={400}
+            height={200}
+            alt="under"
+          />
         </div>
 
         <div>
@@ -32,6 +39,11 @@ export default function GetBack() {
             יכול לעשות בשבילכם. נסו אותו היום ואל תתנו לשום דבר לעצור אתכם
             מלהחזיר את עצמכם למגרש שלכם.
           </p>
+        </div>
+        <div className="self-end ">
+          <button className="self-end bg-[#381f28] text-[white] px-20 py-2 rounded-full">
+            צור קשר
+          </button>
         </div>
       </div>
 
