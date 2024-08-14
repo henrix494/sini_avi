@@ -1,23 +1,22 @@
 {
   "format": "page",
   "id": "homepage",
-  "label": "HomePage",
+  "label": "homepage",
   "repeatable": false,
   "status": true,
   "json": {
     "Main": {
-      "title": {
-        "type": "Text",
-        "config": {
-          "label": "Title",
-          "placeholder": ""
-        }
-      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "personalized": {
+              "type": "SharedSlice"
+            },
+            "get_back": {
+              "type": "SharedSlice"
+            },
             "hero": {
               "type": "SharedSlice"
             }

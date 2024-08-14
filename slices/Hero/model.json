@@ -20,13 +20,49 @@
             "thumbnails": []
           }
         },
-        "main_text": {
+        "hero_title": {
           "type": "StructuredText",
           "config": {
-            "label": "main Text",
+            "label": "Hero Title",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "heading1"
+            "multi": "heading2"
+          }
+        },
+        "hero_color": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Hero color",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
+          }
+        },
+        "rest_hero_title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Rest Hero Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading3"
+          }
+        },
+        "first_text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "first text",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
+          }
+        },
+        "secound_text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "secound text",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
           }
         }
       },

@@ -1,6 +1,6 @@
 import { Content } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
-
+import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import HeroComp from "@/components/hero/HeroComp";
 /**
  * Props for `Hero`.
  */
@@ -12,11 +12,10 @@ export type HeroProps = SliceComponentProps<Content.HeroSlice>;
 const Hero = ({ slice }: HeroProps): JSX.Element => {
   return (
     <section
-      className="mt-10"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      Placeholder component for hero (variation: {slice.variation}) Slices
+      <HeroComp slice={slice} index={0} slices={[]} context={undefined} />
     </section>
   );
 };

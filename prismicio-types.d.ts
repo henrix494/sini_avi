@@ -4,25 +4,17 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type HomepageDocumentDataSlicesSlice = HeroSlice;
+type HomepageDocumentDataSlicesSlice =
+  | PersonalizedSlice
+  | GetBackSlice
+  | HeroSlice;
 
 /**
- * Content for HomePage documents
+ * Content for homepage documents
  */
 interface HomepageDocumentData {
   /**
-   * Title field in *HomePage*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: homepage.title
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  title: prismic.KeyTextField;
-
-  /**
-   * Slice Zone field in *HomePage*
+   * Slice Zone field in *homepage*
    *
    * - **Field Type**: Slice Zone
    * - **Placeholder**: *None*
@@ -31,7 +23,7 @@ interface HomepageDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
   slices: prismic.SliceZone<HomepageDocumentDataSlicesSlice> /**
-   * Meta Title field in *HomePage*
+   * Meta Title field in *homepage*
    *
    * - **Field Type**: Text
    * - **Placeholder**: A title of the page used for social media and search engines
@@ -42,7 +34,7 @@ interface HomepageDocumentData {
   meta_title: prismic.KeyTextField;
 
   /**
-   * Meta Description field in *HomePage*
+   * Meta Description field in *homepage*
    *
    * - **Field Type**: Text
    * - **Placeholder**: A brief summary of the page
@@ -53,7 +45,7 @@ interface HomepageDocumentData {
   meta_description: prismic.KeyTextField;
 
   /**
-   * Meta Image field in *HomePage*
+   * Meta Image field in *homepage*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
@@ -65,7 +57,7 @@ interface HomepageDocumentData {
 }
 
 /**
- * HomePage document from Prismic
+ * homepage document from Prismic
  *
  * - **API ID**: `homepage`
  * - **Repeatable**: `false`
@@ -184,6 +176,88 @@ export type SettingsDocument<Lang extends string = string> =
 export type AllDocumentTypes = HomepageDocument | SettingsDocument;
 
 /**
+ * Item in *GetBack → Default → Primary → get Back Text*
+ */
+export interface GetBackSliceDefaultPrimaryGetBackTextItem {
+  /**
+   * Text field in *GetBack → Default → Primary → get Back Text*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: get_back.default.primary.get_back_text[].text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *GetBack → Default → Primary*
+ */
+export interface GetBackSliceDefaultPrimary {
+  /**
+   * Main Image field in *GetBack → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: get_back.default.primary.main_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  main_image: prismic.ImageField<never>;
+
+  /**
+   * Title field in *GetBack → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: get_back.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * get Back Text field in *GetBack → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: get_back.default.primary.get_back_text[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  get_back_text: prismic.GroupField<
+    Simplify<GetBackSliceDefaultPrimaryGetBackTextItem>
+  >;
+}
+
+/**
+ * Default variation for GetBack Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type GetBackSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<GetBackSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *GetBack*
+ */
+type GetBackSliceVariation = GetBackSliceDefault;
+
+/**
+ * GetBack Shared Slice
+ *
+ * - **API ID**: `get_back`
+ * - **Description**: GetBack
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type GetBackSlice = prismic.SharedSlice<
+  "get_back",
+  GetBackSliceVariation
+>;
+
+/**
  * Primary content in *Hero → Default → Primary*
  */
 export interface HeroSliceDefaultPrimary {
@@ -198,14 +272,54 @@ export interface HeroSliceDefaultPrimary {
   cover: prismic.ImageField<never>;
 
   /**
-   * main Text field in *Hero → Default → Primary*
+   * Hero Title field in *Hero → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: hero.default.primary.main_text
+   * - **API ID Path**: hero.default.primary.hero_title
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  main_text: prismic.RichTextField;
+  hero_title: prismic.RichTextField;
+
+  /**
+   * Hero color field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.hero_color
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  hero_color: prismic.RichTextField;
+
+  /**
+   * Rest Hero Title field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.rest_hero_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  rest_hero_title: prismic.RichTextField;
+
+  /**
+   * first text field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.first_text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  first_text: prismic.RichTextField;
+
+  /**
+   * secound text field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.secound_text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  secound_text: prismic.RichTextField;
 }
 
 /**
@@ -235,6 +349,36 @@ type HeroSliceVariation = HeroSliceDefault;
  */
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
+/**
+ * Default variation for Personalized Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PersonalizedSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *Personalized*
+ */
+type PersonalizedSliceVariation = PersonalizedSliceDefault;
+
+/**
+ * Personalized Shared Slice
+ *
+ * - **API ID**: `personalized`
+ * - **Description**: Personalized
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PersonalizedSlice = prismic.SharedSlice<
+  "personalized",
+  PersonalizedSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -252,10 +396,18 @@ declare module "@prismicio/client" {
       SettingsDocumentData,
       SettingsDocumentDataNavigationItem,
       AllDocumentTypes,
+      GetBackSlice,
+      GetBackSliceDefaultPrimaryGetBackTextItem,
+      GetBackSliceDefaultPrimary,
+      GetBackSliceVariation,
+      GetBackSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      PersonalizedSlice,
+      PersonalizedSliceVariation,
+      PersonalizedSliceDefault,
     };
   }
 }
