@@ -4,7 +4,7 @@ import { PrismicNextLink, PrismicNextImage } from "@prismicio/next";
 import { LinkField } from "@prismicio/types"; // Import the type
 import { ImageFieldImage } from "@prismicio/client";
 import { gsap } from "gsap";
-
+import Image from "next/image";
 // Define the type for the navigation prop
 interface NavigationItem {
   label: string;
@@ -38,7 +38,8 @@ export default function NavBar({
     <nav className="bg-main-bg h-[80px] fixed top-0 w-full text-white flex lg:justify-center text-[white] z-[100] ">
       <div className="flex items-center max-lg:justify-around h-full lg:w-[70%] w-full px-4 lg:px-0 lg:gap-20 z-[1200]">
         <div>
-          <PrismicNextImage field={logo} alt="" height={50} />
+          {/* <PrismicNextImage field={logo} alt="" height={50} /> */}
+          <Image src={"/icon.svg"} width={70} height={60} alt="icon" />
         </div>
         <div
           className={`flex max-lg:flex-col lg:flex-row gap-10 lg:items-center lg:static absolute top-[70px] lg:top-0 left-0 w-full lg:w-auto bg-main-bg transition-all duration-500 ease-out overflow-hidden ${

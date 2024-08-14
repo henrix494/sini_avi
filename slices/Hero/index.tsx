@@ -1,6 +1,7 @@
 import { Content } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import HeroComp from "@/components/hero/HeroComp";
+import Head from "next/head";
 /**
  * Props for `Hero`.
  */
