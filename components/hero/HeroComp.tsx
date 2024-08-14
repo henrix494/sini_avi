@@ -4,6 +4,7 @@ import Image from "next/image";
 import gsap from "gsap";
 import { HeroProps } from "@/slices/Hero";
 import { PrismicRichText } from "@prismicio/react";
+import Link from "next/link";
 
 export default function HeroComp({ slice }: HeroProps) {
   const component = useRef(null);
@@ -95,10 +96,17 @@ export default function HeroComp({ slice }: HeroProps) {
             }}
           />
         </div>
-
-        <button className="bg-[white] px-8 text-[black] rounded-full py-2 mt-10 font-bold hover:bg-alt hover:text-[white] transition-all">
-          קבע פגישה
-        </button>
+        <div className="mt-10">
+          <Link
+            href={
+              "https://wa.me/972535226921?text=היי,%20אני%20מעוניין%2Fנת%20לשמוע%20עוד%20פרטים%20על%20הטיפול%20!"
+            }
+            target="_blank"
+            className="bg-[white] px-8 text-[black] rounded-full py-2  font-bold hover:bg-alt hover:text-[white] transition-all "
+          >
+            קבע פגישה
+          </Link>
+        </div>
       </div>
     </div>
   );
