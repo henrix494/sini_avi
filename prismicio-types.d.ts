@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type HomepageDocumentDataSlicesSlice =
+  | DuringTherapySlice
   | PersonalizedSlice
   | GetBackSlice
   | HeroSlice;
@@ -174,6 +175,71 @@ export type SettingsDocument<Lang extends string = string> =
   >;
 
 export type AllDocumentTypes = HomepageDocument | SettingsDocument;
+
+/**
+ * Primary content in *DuringTherapy → Default → Primary*
+ */
+export interface DuringTherapySliceDefaultPrimary {
+  /**
+   * before field in *DuringTherapy → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: during_therapy.default.primary.before
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  before: prismic.RichTextField;
+
+  /**
+   * during field in *DuringTherapy → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: during_therapy.default.primary.during
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  during: prismic.RichTextField;
+
+  /**
+   * after field in *DuringTherapy → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: during_therapy.default.primary.after
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  after: prismic.RichTextField;
+}
+
+/**
+ * Default variation for DuringTherapy Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type DuringTherapySliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<DuringTherapySliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *DuringTherapy*
+ */
+type DuringTherapySliceVariation = DuringTherapySliceDefault;
+
+/**
+ * DuringTherapy Shared Slice
+ *
+ * - **API ID**: `during_therapy`
+ * - **Description**: DuringTherapy
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type DuringTherapySlice = prismic.SharedSlice<
+  "during_therapy",
+  DuringTherapySliceVariation
+>;
 
 /**
  * Item in *GetBack → Default → Primary → get Back Text*
@@ -396,6 +462,10 @@ declare module "@prismicio/client" {
       SettingsDocumentData,
       SettingsDocumentDataNavigationItem,
       AllDocumentTypes,
+      DuringTherapySlice,
+      DuringTherapySliceDefaultPrimary,
+      DuringTherapySliceVariation,
+      DuringTherapySliceDefault,
       GetBackSlice,
       GetBackSliceDefaultPrimaryGetBackTextItem,
       GetBackSliceDefaultPrimary,

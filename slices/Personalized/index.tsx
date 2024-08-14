@@ -17,7 +17,6 @@ const Personalized = ({ slice }: PersonalizedProps): JSX.Element => {
       data-slice-variation={slice.variation}
     >
       <PersonalizedComp />
-      <During />
     </section>
   );
 };

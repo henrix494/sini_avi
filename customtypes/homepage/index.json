@@ -11,6 +11,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "during_therapy": {
+              "type": "SharedSlice"
+            },
             "personalized": {
               "type": "SharedSlice"
             },
