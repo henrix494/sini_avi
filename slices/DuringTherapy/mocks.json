@@ -24,6 +24,17 @@
 						}
 					}
 				]
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Minim cillum commodo et do qui anim anim. Officia culpa commodo ut fugiat cillum occaecat do aliqua consequat tempor sint veniam esse."
+						}
+					}
+				]
 			}
 		},
 		"items": []

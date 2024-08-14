@@ -29,6 +29,15 @@
             "allowTargetBlank": true,
             "multi": "heading4"
           }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
+          }
         }
       },
       "items": {}

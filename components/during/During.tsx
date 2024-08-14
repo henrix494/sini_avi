@@ -53,11 +53,16 @@ export default function During({ slice }: { slice: DuringTherapySlice }) {
           />
         </div>
         <div>
-          <p className=" lg:w-[500px] text-[#666] text-[1.125rem] ">
-            בסוף המפגש הראשון שלך, ניצור תוכנית מותאמת אישית לפי מטרות הבריאות
-            והרווחה האישיות שלך. ההתמדה תהיה המפתח להשגת ההקלה שאתה מחפש. הנה מה
-            לצפות לפני, במהלך ואחרי מפגש:
-          </p>
+          <PrismicRichText
+            field={slice.primary.description}
+            components={{
+              paragraph: ({ children }) => (
+                <p className=" lg:w-[500px] text-[#666] text-[1.125rem]">
+                  {children}
+                </p>
+              ),
+            }}
+          />
         </div>
       </div>
       <div className="flex lg:gap-10 gap-20 justify-between lg:w-[70%] max-lg:flex-col">
