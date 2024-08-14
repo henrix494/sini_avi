@@ -2,7 +2,41 @@
 	{
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
-		"primary": {},
+		"primary": {
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Ruler"
+						}
+					}
+				]
+			},
+			"titlecolor": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading3",
+						"content": {
+							"text": "Sister"
+						}
+					}
+				]
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Quis reprehenderit incididunt fugiat. Sit Lorem officia cillum esse veniam. Nulla do fugiat amet excepteur proident."
+						}
+					}
+				]
+			}
+		},
 		"items": []
 	}
 ]

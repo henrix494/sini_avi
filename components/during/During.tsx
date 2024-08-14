@@ -1,7 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import Card from "../card/Card";
-export default function During() {
+import { DuringTherapySlice } from "@/prismicio-types";
+import { PrismicRichText } from "@prismicio/react";
+export default function During({ slice }: { slice: DuringTherapySlice }) {
   const imgArr = [
     {
       src: "/during/one.jpg",
@@ -27,12 +29,28 @@ export default function During() {
       className="flex items-center h-[400px] mt-10  flex-col gap-28"
       dir="rtl"
     >
-      <div className="   flex justify-around gap-20   max-lg:flex-col max-lg:px-7">
+      <div className="   flex justify-around lg:gap-20 gap-10   max-lg:flex-col max-lg:px-7">
         <div>
-          <h3 className=" text-[2.5rem] font-[700] text-main-bg">
-            <span className="text-alt">השיטה שלנו: </span>
-            ריפוי שגדל כל פגישה
-          </h3>
+          <PrismicRichText
+            field={slice.primary.title_color}
+            components={{
+              heading3: ({ children }) => (
+                <h3 className="text-[2.5rem] font-[700] text-alt inline-block ml-4">
+                  {children}
+                </h3>
+              ),
+            }}
+          />
+          <PrismicRichText
+            field={slice.primary.title}
+            components={{
+              heading4: ({ children }) => (
+                <h4 className="text-[2.5rem] font-[700] text-main-bg inline-block">
+                  {children}
+                </h4>
+              ),
+            }}
+          />
         </div>
         <div>
           <p className=" lg:w-[500px] text-[#666] text-[1.125rem] ">

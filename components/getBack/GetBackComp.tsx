@@ -34,7 +34,6 @@ export default function GetBackComp({ slice }: GetBackProps) {
                 components={{
                   paragraph: ({ children }) => (
                     <p className="text-base md:text-lg lg:text-xl text-gray-700 text-right">
-                      {" "}
                       {children}
                     </p>
                   ),
@@ -44,31 +43,9 @@ export default function GetBackComp({ slice }: GetBackProps) {
             </div>
           );
         })}
-        {/* 
-        <div>
-          <p className="text-base md:text-lg lg:text-xl text-gray-700 text-right">
-            האם ידעתם ששני שלישים מקבוצות ה-NFL משתמשות בדיקור סיני כדי לעזור
-            להקל על השפעות אורח חייהן הפיזי המתיש?
-          </p>
-        </div>
 
-        <div>
-          <p className="text-base md:text-lg lg:text-xl text-gray-700 text-right">
-            across מדינה, יותר ספורטאים מקצועיים פונים לדיקור סיני כדי להקל על
-            כיווץ שרירים וכאבים, וגם כדי להתמודד עם בעיות בריאותיות נוספות כמו
-            אלרגיות, סטרס, דיכאון ובעיות שינה.
-          </p>
-        </div>
-
-        <div>
-          <p className="text-base md:text-lg lg:text-xl text-gray-700 text-right">
-            אם דיקור סיני מועיל כל כך לספורטאים ברמה גבוהה, תארו לעצמכם מה הוא
-            יכול לעשות בשבילכם. נסו אותו היום ואל תתנו לשום דבר לעצור אתכם
-            מלהחזיר את עצמכם למגרש שלכם.
-          </p>
-        </div> */}
         <div className="self-end ">
-          <button className="self-end bg-[#381f28] text-[white] px-20 py-2 rounded-full">
+          <button className="self-end bg-[#381f28] text-[white] px-20 py-2 rounded-full hover:opacity-90 transition-all">
             צור קשר
           </button>
         </div>

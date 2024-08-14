@@ -181,34 +181,24 @@ export type AllDocumentTypes = HomepageDocument | SettingsDocument;
  */
 export interface DuringTherapySliceDefaultPrimary {
   /**
-   * before field in *DuringTherapy → Default → Primary*
+   * title_color field in *DuringTherapy → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: during_therapy.default.primary.before
+   * - **API ID Path**: during_therapy.default.primary.title_color
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  before: prismic.RichTextField;
+  title_color: prismic.RichTextField;
 
   /**
-   * during field in *DuringTherapy → Default → Primary*
+   * title field in *DuringTherapy → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: during_therapy.default.primary.during
+   * - **API ID Path**: during_therapy.default.primary.title
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  during: prismic.RichTextField;
-
-  /**
-   * after field in *DuringTherapy → Default → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: during_therapy.default.primary.after
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  after: prismic.RichTextField;
+  title: prismic.RichTextField;
 }
 
 /**
@@ -416,6 +406,41 @@ type HeroSliceVariation = HeroSliceDefault;
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
+ * Primary content in *Personalized → Default → Primary*
+ */
+export interface PersonalizedSliceDefaultPrimary {
+  /**
+   * title field in *Personalized → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: personalized.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * titleColor field in *Personalized → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: personalized.default.primary.titlecolor
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  titlecolor: prismic.RichTextField;
+
+  /**
+   * description field in *Personalized → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: personalized.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+}
+
+/**
  * Default variation for Personalized Slice
  *
  * - **API ID**: `default`
@@ -424,7 +449,7 @@ export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
  */
 export type PersonalizedSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
+  Simplify<PersonalizedSliceDefaultPrimary>,
   never
 >;
 
@@ -476,6 +501,7 @@ declare module "@prismicio/client" {
       HeroSliceVariation,
       HeroSliceDefault,
       PersonalizedSlice,
+      PersonalizedSliceDefaultPrimary,
       PersonalizedSliceVariation,
       PersonalizedSliceDefault,
     };
