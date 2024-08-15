@@ -12,29 +12,25 @@ export default function GetBackComp({ slice }: GetBackProps) {
       <div
         className={`flex justify-center items-center lg:max-h-[530px] max-lg:flex-col   ${slice.variation === "leftToRight" && "flex-row-reverse"} ${slice.variation === "bgGrayImageLeft" && "flex-row-reverse"}`}
       >
-        <div className="self-start lg:ml-24 max-lg:px-5 text-right  lg:mr-20 ">
+        <div className="lg:self-start lg:ml-24 max-lg:px-5 text-right  lg:mr-20 ">
           <div className="relative max-h-[800px]">
-            <div className="text-right clearfix">
+            <div className="text-right flex items-center space-x-4 space-x-reverse flex-row-reverse">
               <PrismicRichText
                 field={slice.primary.title}
                 components={{
                   heading2: ({ children }) => (
-                    <h2
-                      className={`text-main-bg text-[3rem] font-[700] leading-[1.2] mb-4  ${slice.variation !== "default" && "float-right"}`}
-                    >
+                    <h2 className="text-main-bg text-[3rem] font-[700] leading-[1.2] mb-4">
                       {children}
                     </h2>
                   ),
                 }}
               />
-              {slice.variation !== "default" && (
+              {slice.primary.colortext && (
                 <PrismicRichText
                   field={slice.primary.colortext}
                   components={{
                     paragraph: ({ children }) => (
-                      <p
-                        className={`text-alt text-[3rem] font-[700] leading-[1.2] mb-4 float-right mr-3  `}
-                      >
+                      <p className="text-alt text-[3rem] font-[700] leading-[1.2] mb-4">
                         {children}
                       </p>
                     ),

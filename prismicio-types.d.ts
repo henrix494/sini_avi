@@ -316,6 +316,16 @@ export interface GetBackSliceDefaultPrimary {
   main_image: prismic.ImageField<never>;
 
   /**
+   * colortext field in *GetBack → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: get_back.default.primary.colortext
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  colortext: prismic.RichTextField;
+
+  /**
    * Title field in *GetBack → Default → Primary*
    *
    * - **Field Type**: Rich Text

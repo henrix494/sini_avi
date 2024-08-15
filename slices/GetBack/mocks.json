@@ -83,6 +83,17 @@
 				"alt": null,
 				"__TYPE__": "ImageContent",
 				"thumbnails": {}
+			},
+			"colortext": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Qui reprehenderit consequat occaecat non laboris commodo do culpa aute amet qui veniam veniam. Minim do cupidatat exercitation ullamco aute amet velit irure amet. Enim laborum sint anim non cupidatat nisi deserunt."
+						}
+					}
+				]
 			}
 		},
 		"items": []
