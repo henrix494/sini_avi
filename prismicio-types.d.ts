@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type HomepageDocumentDataSlicesSlice =
+  | MapSlice
   | DuringTherapySlice
   | PersonalizedSlice
   | GetBackSlice
@@ -705,6 +706,33 @@ type HeroSliceVariation = HeroSliceDefault;
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
+ * Default variation for Map Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MapSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *Map*
+ */
+type MapSliceVariation = MapSliceDefault;
+
+/**
+ * Map Shared Slice
+ *
+ * - **API ID**: `map`
+ * - **Description**: Map
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MapSlice = prismic.SharedSlice<"map", MapSliceVariation>;
+
+/**
  * Item in *Personalized → Default → Primary → list container*
  */
 export interface PersonalizedSliceDefaultPrimaryListContainerItem {
@@ -1000,6 +1028,9 @@ declare module "@prismicio/client" {
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      MapSlice,
+      MapSliceVariation,
+      MapSliceDefault,
       PersonalizedSlice,
       PersonalizedSliceDefaultPrimaryListContainerItem,
       PersonalizedSliceDefaultPrimaryListContainerTwoItem,
