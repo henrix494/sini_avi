@@ -19,7 +19,9 @@ export default function GetBackComp({ slice }: GetBackProps) {
                 field={slice.primary.title}
                 components={{
                   heading2: ({ children }) => (
-                    <h2 className="text-main-bg text-[3rem] font-[700] leading-[1.2] mb-4 float-right">
+                    <h2
+                      className={`text-main-bg text-[3rem] font-[700] leading-[1.2] mb-4  ${slice.variation !== "default" && "float-right"}`}
+                    >
                       {children}
                     </h2>
                   ),
@@ -30,7 +32,9 @@ export default function GetBackComp({ slice }: GetBackProps) {
                   field={slice.primary.colortext}
                   components={{
                     paragraph: ({ children }) => (
-                      <p className="text-alt text-[3rem] font-[700] leading-[1.2] mb-4 float-right ml-2">
+                      <p
+                        className={`text-alt text-[3rem] font-[700] leading-[1.2] mb-4 float-right mr-3  `}
+                      >
                         {children}
                       </p>
                     ),
