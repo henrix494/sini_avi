@@ -8,7 +8,7 @@ const config: Config = {
     "./app/slices/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    colors: { "main-bg": "#381f28", alt: "#f6c42b" },
+    colors: { "main-bg": "#381f28", alt: "#f6c42b", "alt-bg": "#fafafa" },
   },
   plugins: [],
 };

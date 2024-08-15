@@ -18,13 +18,12 @@ export default function GetBackComp({ slice }: GetBackProps) {
               ),
             }}
           />
-          <Image
-            className=" absolute right-0 top-12"
-            src={"/underLine.svg"}
-            width={400}
-            height={200}
-            alt="under"
-          />
+          {slice.variation === "default" && (
+            <PrismicImage
+              field={slice.primary.underline || " "}
+              className="absolute right-0 top-12"
+            />
+          )}
         </div>
         {slice.primary.get_back_text?.map(({ text }, index) => {
           return (

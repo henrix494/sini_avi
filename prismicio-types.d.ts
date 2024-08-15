@@ -257,6 +257,21 @@ export interface GetBackSliceDefaultPrimaryGetBackTextItem {
 }
 
 /**
+ * Item in *GetBack → withOutUnderLine → Primary → get Back Text*
+ */
+export interface GetBackSliceWithOutUnderLinePrimaryGetBackTextItem {
+  /**
+   * Text field in *GetBack → withOutUnderLine → Primary → get Back Text*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: get_back.withOutUnderLine.primary.get_back_text[].text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+}
+
+/**
  * Primary content in *GetBack → Default → Primary*
  */
 export interface GetBackSliceDefaultPrimary {
@@ -291,6 +306,16 @@ export interface GetBackSliceDefaultPrimary {
   get_back_text: prismic.GroupField<
     Simplify<GetBackSliceDefaultPrimaryGetBackTextItem>
   >;
+
+  /**
+   * underLine field in *GetBack → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: get_back.default.primary.underline
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  underline: prismic.ImageField<never>;
 }
 
 /**
@@ -307,9 +332,59 @@ export type GetBackSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *GetBack → withOutUnderLine → Primary*
+ */
+export interface GetBackSliceWithOutUnderLinePrimary {
+  /**
+   * Main Image field in *GetBack → withOutUnderLine → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: get_back.withOutUnderLine.primary.main_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  main_image: prismic.ImageField<never>;
+
+  /**
+   * Title field in *GetBack → withOutUnderLine → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: get_back.withOutUnderLine.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * get Back Text field in *GetBack → withOutUnderLine → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: get_back.withOutUnderLine.primary.get_back_text[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  get_back_text: prismic.GroupField<
+    Simplify<GetBackSliceWithOutUnderLinePrimaryGetBackTextItem>
+  >;
+}
+
+/**
+ * withOutUnderLine variation for GetBack Slice
+ *
+ * - **API ID**: `withOutUnderLine`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type GetBackSliceWithOutUnderLine = prismic.SharedSliceVariation<
+  "withOutUnderLine",
+  Simplify<GetBackSliceWithOutUnderLinePrimary>,
+  never
+>;
+
+/**
  * Slice variation for *GetBack*
  */
-type GetBackSliceVariation = GetBackSliceDefault;
+type GetBackSliceVariation = GetBackSliceDefault | GetBackSliceWithOutUnderLine;
 
 /**
  * GetBack Shared Slice
@@ -416,6 +491,126 @@ type HeroSliceVariation = HeroSliceDefault;
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
+ * Item in *Personalized → Default → Primary → list container*
+ */
+export interface PersonalizedSliceDefaultPrimaryListContainerItem {
+  /**
+   * title field in *Personalized → Default → Primary → list container*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: personalized.default.primary.list_container[].title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+}
+
+/**
+ * Item in *Personalized → Default → Primary → list container two*
+ */
+export interface PersonalizedSliceDefaultPrimaryListContainerTwoItem {
+  /**
+   * title field in *Personalized → Default → Primary → list container two*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: personalized.default.primary.list_container_two[].title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+}
+
+/**
+ * Item in *Personalized → Default → Primary → list container three*
+ */
+export interface PersonalizedSliceDefaultPrimaryListContainerThreeItem {
+  /**
+   * title field in *Personalized → Default → Primary → list container three*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: personalized.default.primary.list_container_three[].title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+}
+
+/**
+ * Item in *Personalized → Default → Primary → list items one*
+ */
+export interface PersonalizedSliceDefaultPrimaryListItemsOneItem {
+  /**
+   * text field in *Personalized → Default → Primary → list items one*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: personalized.default.primary.list_items_one[].text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+
+  /**
+   * image field in *Personalized → Default → Primary → list items one*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: personalized.default.primary.list_items_one[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Item in *Personalized → Default → Primary → list items two*
+ */
+export interface PersonalizedSliceDefaultPrimaryListItemsTwoItem {
+  /**
+   * text field in *Personalized → Default → Primary → list items two*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: personalized.default.primary.list_items_two[].text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+
+  /**
+   * image field in *Personalized → Default → Primary → list items two*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: personalized.default.primary.list_items_two[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Item in *Personalized → Default → Primary → list items three*
+ */
+export interface PersonalizedSliceDefaultPrimaryListItemsThreeItem {
+  /**
+   * text field in *Personalized → Default → Primary → list items three*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: personalized.default.primary.list_items_three[].text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+
+  /**
+   * image field in *Personalized → Default → Primary → list items three*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: personalized.default.primary.list_items_three[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
  * Primary content in *Personalized → Default → Primary*
  */
 export interface PersonalizedSliceDefaultPrimary {
@@ -448,6 +643,78 @@ export interface PersonalizedSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   description: prismic.RichTextField;
+
+  /**
+   * list container field in *Personalized → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: personalized.default.primary.list_container[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  list_container: prismic.GroupField<
+    Simplify<PersonalizedSliceDefaultPrimaryListContainerItem>
+  >;
+
+  /**
+   * list container two field in *Personalized → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: personalized.default.primary.list_container_two[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  list_container_two: prismic.GroupField<
+    Simplify<PersonalizedSliceDefaultPrimaryListContainerTwoItem>
+  >;
+
+  /**
+   * list container three field in *Personalized → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: personalized.default.primary.list_container_three[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  list_container_three: prismic.GroupField<
+    Simplify<PersonalizedSliceDefaultPrimaryListContainerThreeItem>
+  >;
+
+  /**
+   * list items one field in *Personalized → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: personalized.default.primary.list_items_one[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  list_items_one: prismic.GroupField<
+    Simplify<PersonalizedSliceDefaultPrimaryListItemsOneItem>
+  >;
+
+  /**
+   * list items two field in *Personalized → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: personalized.default.primary.list_items_two[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  list_items_two: prismic.GroupField<
+    Simplify<PersonalizedSliceDefaultPrimaryListItemsTwoItem>
+  >;
+
+  /**
+   * list items three field in *Personalized → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: personalized.default.primary.list_items_three[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  list_items_three: prismic.GroupField<
+    Simplify<PersonalizedSliceDefaultPrimaryListItemsThreeItem>
+  >;
 }
 
 /**
@@ -504,13 +771,22 @@ declare module "@prismicio/client" {
       GetBackSlice,
       GetBackSliceDefaultPrimaryGetBackTextItem,
       GetBackSliceDefaultPrimary,
+      GetBackSliceWithOutUnderLinePrimaryGetBackTextItem,
+      GetBackSliceWithOutUnderLinePrimary,
       GetBackSliceVariation,
       GetBackSliceDefault,
+      GetBackSliceWithOutUnderLine,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
       PersonalizedSlice,
+      PersonalizedSliceDefaultPrimaryListContainerItem,
+      PersonalizedSliceDefaultPrimaryListContainerTwoItem,
+      PersonalizedSliceDefaultPrimaryListContainerThreeItem,
+      PersonalizedSliceDefaultPrimaryListItemsOneItem,
+      PersonalizedSliceDefaultPrimaryListItemsTwoItem,
+      PersonalizedSliceDefaultPrimaryListItemsThreeItem,
       PersonalizedSliceDefaultPrimary,
       PersonalizedSliceVariation,
       PersonalizedSliceDefault,

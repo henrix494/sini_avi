@@ -38,6 +38,138 @@
             "allowTargetBlank": true,
             "multi": "paragraph"
           }
+        },
+        "list_container": {
+          "type": "Group",
+          "config": {
+            "label": "list container",
+            "repeat": true,
+            "fields": {
+              "title": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "title",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "heading3"
+                }
+              }
+            }
+          }
+        },
+        "list_container_two": {
+          "type": "Group",
+          "config": {
+            "label": "list container two",
+            "repeat": true,
+            "fields": {
+              "title": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "title",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "heading3"
+                }
+              }
+            }
+          }
+        },
+        "list_container_three": {
+          "type": "Group",
+          "config": {
+            "label": "list container three",
+            "repeat": true,
+            "fields": {
+              "title": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "title",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "heading3"
+                }
+              }
+            }
+          }
+        },
+        "list_items_one": {
+          "type": "Group",
+          "config": {
+            "label": "list items one",
+            "repeat": true,
+            "fields": {
+              "text": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "text",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "heading3"
+                }
+              },
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              }
+            }
+          }
+        },
+        "list_items_two": {
+          "type": "Group",
+          "config": {
+            "label": "list items two",
+            "repeat": true,
+            "fields": {
+              "text": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "text",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "heading3"
+                }
+              },
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              }
+            }
+          }
+        },
+        "list_items_three": {
+          "type": "Group",
+          "config": {
+            "label": "list items three",
+            "repeat": true,
+            "fields": {
+              "text": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "text",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "heading3"
+                }
+              },
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              }
+            }
+          }
         }
       },
       "items": {}
