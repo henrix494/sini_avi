@@ -6,11 +6,13 @@ import Btn from "../btn/Btn";
 
 export default function GetBackComp({ slice }: GetBackProps) {
   return (
-    <div className="bg-alt-bg lg:h-[700px] flex items-center justify-center max-lg:mt-10">
+    <div
+      className={` lg:h-[700px] flex items-center justify-center max-lg:mt-10  ${slice.variation === "bgGray" ? "bg-alt-bg" : "bg-[white]"}`}
+    >
       <div
         className={`flex justify-center items-center lg:max-h-[530px] max-lg:flex-col   ${slice.variation === "leftToRight" && "flex-row-reverse"}`}
       >
-        <div className="self-start lg:ml-24 max-lg:px-5 text-right  mr-20">
+        <div className="self-start lg:ml-24 max-lg:px-5 text-right  lg:mr-20 ">
           <div className="relative max-h-[800px]">
             <PrismicRichText
               field={slice.primary.title}
@@ -51,13 +53,13 @@ export default function GetBackComp({ slice }: GetBackProps) {
             <Btn />
           </div>
         </div>
-        <div className="lg:h-[700px] flex items-center max-lg:mt-10 max-lg:px-5">
+        <div className="lg:h-[700px] flex items-center max-lg:mt-10 max-lg:px-5 ">
           <Image
             src={slice.primary.main_image.url || " "}
             width={550}
             height={550}
             alt="me"
-            className="rounded-xl w-full lg:w-auto"
+            className="rounded-xl w-full lg:w-auto max-h-[500px] "
           />
         </div>
       </div>

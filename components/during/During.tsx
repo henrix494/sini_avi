@@ -79,7 +79,6 @@ export default function During({ slice }: { slice: DuringTherapySlice }) {
           ))}
         </div>
       </div>
-      <AboutTherapyComp />
     </>
   );
 }
