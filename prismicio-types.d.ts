@@ -257,26 +257,11 @@ export interface GetBackSliceDefaultPrimaryGetBackTextItem {
 }
 
 /**
- * Item in *GetBack → withOutUnderLine → Primary → get Back Text*
- */
-export interface GetBackSliceWithOutUnderLinePrimaryGetBackTextItem {
-  /**
-   * Text field in *GetBack → withOutUnderLine → Primary → get Back Text*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: get_back.withOutUnderLine.primary.get_back_text[].text
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  text: prismic.RichTextField;
-}
-
-/**
- * Item in *GetBack → ImageLeft → Primary → get Back Text*
+ * Item in *GetBack → ImageLeftBgWhite → Primary → get Back Text*
  */
 export interface GetBackSliceLeftToRightPrimaryGetBackTextItem {
   /**
-   * Text field in *GetBack → ImageLeft → Primary → get Back Text*
+   * Text field in *GetBack → ImageLeftBgWhite → Primary → get Back Text*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -287,15 +272,30 @@ export interface GetBackSliceLeftToRightPrimaryGetBackTextItem {
 }
 
 /**
- * Item in *GetBack → bg_gray → Primary → get Back Text*
+ * Item in *GetBack → bg_gray_Image_right → Primary → get Back Text*
  */
 export interface GetBackSliceBgGrayPrimaryGetBackTextItem {
   /**
-   * Text field in *GetBack → bg_gray → Primary → get Back Text*
+   * Text field in *GetBack → bg_gray_Image_right → Primary → get Back Text*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
    * - **API ID Path**: get_back.bgGray.primary.get_back_text[].text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+}
+
+/**
+ * Item in *GetBack → bg_gray_image_left → Primary → get Back Text*
+ */
+export interface GetBackSliceBgGrayImageLeftPrimaryGetBackTextItem {
+  /**
+   * Text field in *GetBack → bg_gray_image_left → Primary → get Back Text*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: get_back.bgGrayImageLeft.primary.get_back_text[].text
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   text: prismic.RichTextField;
@@ -362,61 +362,11 @@ export type GetBackSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
- * Primary content in *GetBack → withOutUnderLine → Primary*
- */
-export interface GetBackSliceWithOutUnderLinePrimary {
-  /**
-   * Main Image field in *GetBack → withOutUnderLine → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: get_back.withOutUnderLine.primary.main_image
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  main_image: prismic.ImageField<never>;
-
-  /**
-   * Title field in *GetBack → withOutUnderLine → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: get_back.withOutUnderLine.primary.title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title: prismic.RichTextField;
-
-  /**
-   * get Back Text field in *GetBack → withOutUnderLine → Primary*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: get_back.withOutUnderLine.primary.get_back_text[]
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */
-  get_back_text: prismic.GroupField<
-    Simplify<GetBackSliceWithOutUnderLinePrimaryGetBackTextItem>
-  >;
-}
-
-/**
- * withOutUnderLine variation for GetBack Slice
- *
- * - **API ID**: `withOutUnderLine`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type GetBackSliceWithOutUnderLine = prismic.SharedSliceVariation<
-  "withOutUnderLine",
-  Simplify<GetBackSliceWithOutUnderLinePrimary>,
-  never
->;
-
-/**
- * Primary content in *GetBack → ImageLeft → Primary*
+ * Primary content in *GetBack → ImageLeftBgWhite → Primary*
  */
 export interface GetBackSliceLeftToRightPrimary {
   /**
-   * Main Image field in *GetBack → ImageLeft → Primary*
+   * Main Image field in *GetBack → ImageLeftBgWhite → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
@@ -426,7 +376,7 @@ export interface GetBackSliceLeftToRightPrimary {
   main_image: prismic.ImageField<never>;
 
   /**
-   * Title field in *GetBack → ImageLeft → Primary*
+   * Title field in *GetBack → ImageLeftBgWhite → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -436,7 +386,7 @@ export interface GetBackSliceLeftToRightPrimary {
   title: prismic.RichTextField;
 
   /**
-   * get Back Text field in *GetBack → ImageLeft → Primary*
+   * get Back Text field in *GetBack → ImageLeftBgWhite → Primary*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
@@ -446,10 +396,30 @@ export interface GetBackSliceLeftToRightPrimary {
   get_back_text: prismic.GroupField<
     Simplify<GetBackSliceLeftToRightPrimaryGetBackTextItem>
   >;
+
+  /**
+   * color field in *GetBack → ImageLeftBgWhite → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: get_back.leftToRight.primary.color
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  color: prismic.RichTextField;
+
+  /**
+   * underLine field in *GetBack → ImageLeftBgWhite → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: get_back.leftToRight.primary.underline
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  underline: prismic.ImageField<never>;
 }
 
 /**
- * ImageLeft variation for GetBack Slice
+ * ImageLeftBgWhite variation for GetBack Slice
  *
  * - **API ID**: `leftToRight`
  * - **Description**: Default
@@ -462,11 +432,11 @@ export type GetBackSliceLeftToRight = prismic.SharedSliceVariation<
 >;
 
 /**
- * Primary content in *GetBack → bg_gray → Primary*
+ * Primary content in *GetBack → bg_gray_Image_right → Primary*
  */
 export interface GetBackSliceBgGrayPrimary {
   /**
-   * Main Image field in *GetBack → bg_gray → Primary*
+   * Main Image field in *GetBack → bg_gray_Image_right → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
@@ -476,7 +446,7 @@ export interface GetBackSliceBgGrayPrimary {
   main_image: prismic.ImageField<never>;
 
   /**
-   * Title field in *GetBack → bg_gray → Primary*
+   * Title field in *GetBack → bg_gray_Image_right → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -486,7 +456,7 @@ export interface GetBackSliceBgGrayPrimary {
   title: prismic.RichTextField;
 
   /**
-   * get Back Text field in *GetBack → bg_gray → Primary*
+   * get Back Text field in *GetBack → bg_gray_Image_right → Primary*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
@@ -498,7 +468,7 @@ export interface GetBackSliceBgGrayPrimary {
   >;
 
   /**
-   * underLine field in *GetBack → bg_gray → Primary*
+   * underLine field in *GetBack → bg_gray_Image_right → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
@@ -509,7 +479,7 @@ export interface GetBackSliceBgGrayPrimary {
 }
 
 /**
- * bg_gray variation for GetBack Slice
+ * bg_gray_Image_right variation for GetBack Slice
  *
  * - **API ID**: `bgGray`
  * - **Description**: Default
@@ -522,13 +492,73 @@ export type GetBackSliceBgGray = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *GetBack → bg_gray_image_left → Primary*
+ */
+export interface GetBackSliceBgGrayImageLeftPrimary {
+  /**
+   * Main Image field in *GetBack → bg_gray_image_left → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: get_back.bgGrayImageLeft.primary.main_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  main_image: prismic.ImageField<never>;
+
+  /**
+   * Title field in *GetBack → bg_gray_image_left → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: get_back.bgGrayImageLeft.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * get Back Text field in *GetBack → bg_gray_image_left → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: get_back.bgGrayImageLeft.primary.get_back_text[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  get_back_text: prismic.GroupField<
+    Simplify<GetBackSliceBgGrayImageLeftPrimaryGetBackTextItem>
+  >;
+
+  /**
+   * underLine field in *GetBack → bg_gray_image_left → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: get_back.bgGrayImageLeft.primary.underline
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  underline: prismic.ImageField<never>;
+}
+
+/**
+ * bg_gray_image_left variation for GetBack Slice
+ *
+ * - **API ID**: `bgGrayImageLeft`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type GetBackSliceBgGrayImageLeft = prismic.SharedSliceVariation<
+  "bgGrayImageLeft",
+  Simplify<GetBackSliceBgGrayImageLeftPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *GetBack*
  */
 type GetBackSliceVariation =
   | GetBackSliceDefault
-  | GetBackSliceWithOutUnderLine
   | GetBackSliceLeftToRight
-  | GetBackSliceBgGray;
+  | GetBackSliceBgGray
+  | GetBackSliceBgGrayImageLeft;
 
 /**
  * GetBack Shared Slice
@@ -915,17 +945,17 @@ declare module "@prismicio/client" {
       GetBackSlice,
       GetBackSliceDefaultPrimaryGetBackTextItem,
       GetBackSliceDefaultPrimary,
-      GetBackSliceWithOutUnderLinePrimaryGetBackTextItem,
-      GetBackSliceWithOutUnderLinePrimary,
       GetBackSliceLeftToRightPrimaryGetBackTextItem,
       GetBackSliceLeftToRightPrimary,
       GetBackSliceBgGrayPrimaryGetBackTextItem,
       GetBackSliceBgGrayPrimary,
+      GetBackSliceBgGrayImageLeftPrimaryGetBackTextItem,
+      GetBackSliceBgGrayImageLeftPrimary,
       GetBackSliceVariation,
       GetBackSliceDefault,
-      GetBackSliceWithOutUnderLine,
       GetBackSliceLeftToRight,
       GetBackSliceBgGray,
+      GetBackSliceBgGrayImageLeft,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,

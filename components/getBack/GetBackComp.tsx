@@ -7,10 +7,10 @@ import Btn from "../btn/Btn";
 export default function GetBackComp({ slice }: GetBackProps) {
   return (
     <div
-      className={` lg:h-[700px] flex items-center justify-center max-lg:mt-10  ${slice.variation === "bgGray" ? "bg-alt-bg" : "bg-[white]"}`}
+      className={` lg:h-[700px] flex items-center justify-center max-lg:mt-10 bg-[white] ${slice.variation === "bgGray" && "bg-alt-bg"} ${slice.variation === "bgGrayImageLeft" && "bg-alt-bg"}`}
     >
       <div
-        className={`flex justify-center items-center lg:max-h-[530px] max-lg:flex-col   ${slice.variation === "leftToRight" && "flex-row-reverse"}`}
+        className={`flex justify-center items-center lg:max-h-[530px] max-lg:flex-col   ${slice.variation === "leftToRight" && "flex-row-reverse"} ${slice.variation === "bgGrayImageLeft" && "flex-row-reverse"}`}
       >
         <div className="self-start lg:ml-24 max-lg:px-5 text-right  lg:mr-20 ">
           <div className="relative max-h-[800px]">
