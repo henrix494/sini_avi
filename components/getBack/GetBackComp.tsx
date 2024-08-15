@@ -42,7 +42,7 @@ export default function GetBackComp({ slice }: GetBackProps) {
             {slice.variation === "default" && (
               <PrismicImage
                 field={slice.primary.underline || " "}
-                className="absolute right-0 top-12 w-[200px]"
+                className="absolute right-0 top-12 w-[200px] "
               />
             )}
           </div>
@@ -68,13 +68,13 @@ export default function GetBackComp({ slice }: GetBackProps) {
             <Btn />
           </div>
         </div>
-        <div className="lg:h-[700px] flex items-center max-lg:mt-10 max-lg:px-5 ">
+        <div className="lg:h-[700px] flex items-center max-lg:mt-10 max-lg:px-5  ">
           <Image
             src={slice.primary.main_image.url || " "}
-            width={550}
-            height={550}
+            width={800}
+            height={800}
             alt="me"
-            className="rounded-xl w-full lg:w-auto max-h-[500px] "
+            className="rounded-xl w-full lg:w-auto  "
           />
         </div>
       </div>
