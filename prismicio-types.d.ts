@@ -386,6 +386,16 @@ export interface GetBackSliceLeftToRightPrimary {
   title: prismic.RichTextField;
 
   /**
+   * colorText field in *GetBack → ImageLeftBgWhite → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: get_back.leftToRight.primary.colortext
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  colortext: prismic.RichTextField;
+
+  /**
    * get Back Text field in *GetBack → ImageLeftBgWhite → Primary*
    *
    * - **Field Type**: Group
@@ -456,6 +466,16 @@ export interface GetBackSliceBgGrayPrimary {
   title: prismic.RichTextField;
 
   /**
+   * colorText field in *GetBack → bg_gray_Image_right → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: get_back.bgGray.primary.colortext
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  colortext: prismic.RichTextField;
+
+  /**
    * get Back Text field in *GetBack → bg_gray_Image_right → Primary*
    *
    * - **Field Type**: Group
@@ -514,6 +534,16 @@ export interface GetBackSliceBgGrayImageLeftPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   title: prismic.RichTextField;
+
+  /**
+   * colorText field in *GetBack → bg_gray_image_left → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: get_back.bgGrayImageLeft.primary.colortext
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  colortext: prismic.RichTextField;
 
   /**
    * get Back Text field in *GetBack → bg_gray_image_left → Primary*

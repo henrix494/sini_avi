@@ -161,7 +161,6 @@
 				]
 			},
 			"underline": {
-				"__TYPE__": "ImageContent",
 				"origin": {
 					"id": "main",
 					"url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db",
@@ -179,7 +178,21 @@
 					},
 					"background": "transparent"
 				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
+			},
+			"colortext": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading6",
+						"content": {
+							"text": "Unhappy"
+						}
+					}
+				]
 			}
 		},
 		"items": [
@@ -273,6 +286,17 @@
 				"alt": null,
 				"__TYPE__": "ImageContent",
 				"thumbnails": {}
+			},
+			"colortext": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Cupidatat quis officia ut fugiat sint magna laborum duis mollit."
+						}
+					}
+				]
 			}
 		},
 		"items": [
@@ -366,6 +390,17 @@
 				"alt": null,
 				"__TYPE__": "ImageContent",
 				"thumbnails": {}
+			},
+			"colortext": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Dolore exercitation culpa proident id do consequat quis ipsum sit consectetur cupidatat aute sunt. Minim nisi irure reprehenderit ut ad ullamco enim voluptate proident sit deserunt ad eu velit nulla."
+						}
+					}
+				]
 			}
 		},
 		"items": [
