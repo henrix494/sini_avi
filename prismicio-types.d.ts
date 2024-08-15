@@ -272,6 +272,21 @@ export interface GetBackSliceWithOutUnderLinePrimaryGetBackTextItem {
 }
 
 /**
+ * Item in *GetBack → leftToRight → Primary → get Back Text*
+ */
+export interface GetBackSliceLeftToRightPrimaryGetBackTextItem {
+  /**
+   * Text field in *GetBack → leftToRight → Primary → get Back Text*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: get_back.leftToRight.primary.get_back_text[].text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+}
+
+/**
  * Primary content in *GetBack → Default → Primary*
  */
 export interface GetBackSliceDefaultPrimary {
@@ -382,9 +397,62 @@ export type GetBackSliceWithOutUnderLine = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *GetBack → leftToRight → Primary*
+ */
+export interface GetBackSliceLeftToRightPrimary {
+  /**
+   * Main Image field in *GetBack → leftToRight → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: get_back.leftToRight.primary.main_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  main_image: prismic.ImageField<never>;
+
+  /**
+   * Title field in *GetBack → leftToRight → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: get_back.leftToRight.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * get Back Text field in *GetBack → leftToRight → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: get_back.leftToRight.primary.get_back_text[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  get_back_text: prismic.GroupField<
+    Simplify<GetBackSliceLeftToRightPrimaryGetBackTextItem>
+  >;
+}
+
+/**
+ * leftToRight variation for GetBack Slice
+ *
+ * - **API ID**: `leftToRight`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type GetBackSliceLeftToRight = prismic.SharedSliceVariation<
+  "leftToRight",
+  Simplify<GetBackSliceLeftToRightPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *GetBack*
  */
-type GetBackSliceVariation = GetBackSliceDefault | GetBackSliceWithOutUnderLine;
+type GetBackSliceVariation =
+  | GetBackSliceDefault
+  | GetBackSliceWithOutUnderLine
+  | GetBackSliceLeftToRight;
 
 /**
  * GetBack Shared Slice
@@ -773,9 +841,12 @@ declare module "@prismicio/client" {
       GetBackSliceDefaultPrimary,
       GetBackSliceWithOutUnderLinePrimaryGetBackTextItem,
       GetBackSliceWithOutUnderLinePrimary,
+      GetBackSliceLeftToRightPrimaryGetBackTextItem,
+      GetBackSliceLeftToRightPrimary,
       GetBackSliceVariation,
       GetBackSliceDefault,
       GetBackSliceWithOutUnderLine,
+      GetBackSliceLeftToRight,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,

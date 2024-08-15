@@ -3,8 +3,10 @@ import Image from "next/image";
 import Btn from "../btn/Btn";
 export default function AboutTherapyComp() {
   return (
-    <div className=" bg-alt-bg lg:h-[700px] flex items-center justify-center max-lg:mt-10">
-      <div className="flex justify-center items-center lg:max-h-[530px] max-lg:flex-col ">
+    <div className=" bg-alt-bg lg:h-[700px] flex items-center justify-center max-lg:mt-10 ">
+      <div
+        className={`flex justify-center items-center lg:max-h-[530px] max-lg:flex-col `}
+      >
         <div className="lg:h-[700px] flex items-center max-lg:mt-10 max-lg:px-5 ">
           <Image
             src={"/therapy/oneImage.png"}
