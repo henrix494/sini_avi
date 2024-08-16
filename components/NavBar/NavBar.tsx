@@ -5,6 +5,7 @@ import { LinkField } from "@prismicio/types"; // Import the type
 import { ImageFieldImage } from "@prismicio/client";
 import { gsap } from "gsap";
 import Image from "next/image";
+import Link from "next/link";
 // Define the type for the navigation prop
 interface NavigationItem {
   label: string;
@@ -36,9 +37,8 @@ export default function NavBar({
 
   return (
     <nav className="bg-main-bg h-[80px] fixed top-0 w-full text-white flex lg:justify-center text-[white] z-[100] ">
-      <div className="flex items-center max-lg:justify-around h-full lg:w-[70%] w-full px-4 lg:px-0 lg:gap-20 z-[1200]">
+      <div className="flex items-center max-lg:justify-around h-full lg:w-[70%] w-full px-4 lg:px-0 lg:gap-20 z-[1200] ">
         <div>
-          {/* <PrismicNextImage field={logo} alt="" height={50} /> */}
           <Image src={"/icon.svg"} width={70} height={60} alt="icon" />
         </div>
         <div
@@ -57,6 +57,15 @@ export default function NavBar({
                 {label}
               </PrismicNextLink>
             ))}
+            <Link
+              href={
+                "https://wa.me/972535226921?text=היי,%20אני%20מעוניין%2Fנת%20לשמוע%20עוד%20פרטים%20על%20הטיפול%20!"
+              }
+              target="_blank"
+              className="self-center bg-[white] text-[black] px-16 py-2 rounded-full hover:opacity-90 transition-all font-bold lg:hidden mb-4"
+            >
+              <button>צור קשר</button>
+            </Link>
           </div>
         </div>
         <div onClick={handleHamClick} className="lg:hidden cursor-pointer">
@@ -98,6 +107,15 @@ export default function NavBar({
           </svg>
         </div>
       </div>
+      <Link
+        href={
+          "https://wa.me/972535226921?text=היי,%20אני%20מעוניין%2Fנת%20לשמוע%20עוד%20פרטים%20על%20הטיפול%20!"
+        }
+        target="_blank"
+        className="self-center bg-[white] text-[black] px-16 py-2 rounded-full hover:opacity-90 transition-all font-bold max-lg:hidden"
+      >
+        <button>צור קשר</button>
+      </Link>
     </nav>
   );
 }
