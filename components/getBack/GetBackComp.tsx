@@ -42,7 +42,7 @@ export default function GetBackComp({ slice }: GetBackProps) {
             {slice.variation === "default" && (
               <PrismicImage
                 field={slice.primary.underline || " "}
-                className="absolute right-0 top-12 w-[200px] "
+                className="absolute right-0 top-14 w-[200px] "
               />
             )}
           </div>

@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type HomepageDocumentDataSlicesSlice =
+  | ContactSlice
   | MapSlice
   | DuringTherapySlice
   | PersonalizedSlice
@@ -176,6 +177,36 @@ export type SettingsDocument<Lang extends string = string> =
   >;
 
 export type AllDocumentTypes = HomepageDocument | SettingsDocument;
+
+/**
+ * Default variation for Contact Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *Contact*
+ */
+type ContactSliceVariation = ContactSliceDefault;
+
+/**
+ * Contact Shared Slice
+ *
+ * - **API ID**: `contact`
+ * - **Description**: Contact
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactSlice = prismic.SharedSlice<
+  "contact",
+  ContactSliceVariation
+>;
 
 /**
  * Primary content in *DuringTherapy → Default → Primary*
@@ -1006,6 +1037,9 @@ declare module "@prismicio/client" {
       SettingsDocumentData,
       SettingsDocumentDataNavigationItem,
       AllDocumentTypes,
+      ContactSlice,
+      ContactSliceVariation,
+      ContactSliceDefault,
       DuringTherapySlice,
       DuringTherapySliceDefaultPrimary,
       DuringTherapySliceVariation,
