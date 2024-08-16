@@ -18,16 +18,21 @@ const GoogleMapComponent = () => {
     <LoadScript
       googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string}
     >
-      <div className="max-lg:mt-10" style={{ backgroundColor: "#fafafa" }}>
-        <div>
-          <h3 className="  text-main-bg text-4xl font-bold text-center">
-            :איפה אנחנו נימצאים
-          </h3>
-        </div>
-        <div className="responsive-map-container">
-          <GoogleMap mapContainerStyle={mapStyle} center={center} zoom={10}>
-            <Marker position={center} />
-          </GoogleMap>
+      <div
+        className="max-lg:mt-10 flex justify-center "
+        style={{ backgroundColor: "#fafafa" }}
+      >
+        <div className=" lg:w-[50%] w-screen">
+          <div>
+            <h3 className="  text-main-bg text-4xl font-bold text-right mr-4">
+              :איפה אנחנו נימצאים
+            </h3>
+          </div>
+          <div className="responsive-map-container">
+            <GoogleMap mapContainerStyle={mapStyle} center={center} zoom={10}>
+              <Marker position={center} />
+            </GoogleMap>
+          </div>
         </div>
       </div>
     </LoadScript>
