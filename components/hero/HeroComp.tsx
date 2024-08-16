@@ -26,7 +26,7 @@ export default function HeroComp({ slice }: HeroProps) {
   }, []);
 
   return (
-    <div className="h-screen relative flex items-center justify-center pt-32 z-[1]">
+    <div className="h-screen relative flex items-center justify-center  z-[1]">
       <Image
         src={slice.primary.cover.url || ""}
         layout="fill"
@@ -36,37 +36,37 @@ export default function HeroComp({ slice }: HeroProps) {
       />
       <div
         ref={component}
-        className="z-10 text-[white] text-center lg:w-[1000px] opacity-0 max-lg:px-4 max-lg:flex max-lg:flex-col max-lg:items-center"
+        className="z-10 text-[white] text-center  opacity-0 max-lg:px-4 max-lg:flex max-lg:flex-col max-lg:items-center"
         style={{ transition: "opacity 0s" }}
       >
-        {/* <h1 className="text-white text-2xl md:text-5xl lg:text-7xl font-extrabold text-wrap">
-          להפעיל <span className="text-alt">ריפוי טיבעי</span>. לשנות את ההרגשה 
-        </h1> */}
-        <PrismicRichText
-          field={slice.primary.hero_color}
-          components={{
-            paragraph: ({ children }) => (
-              <p className="text-alt text-2xl md:text-5xl lg:text-7xl font-extrabold inline-block ">
-                {children}
-              </p>
-            ),
-          }}
-        />
-        <PrismicRichText
-          field={slice.primary.hero_title}
-          components={{
-            heading2: ({ children }) => (
-              <h2 className="text-white text-2xl md:text-5xl lg:text-7xl font-extrabold inline-block lg:ml-4 ">
-                {children}
-              </h2>
-            ),
-          }}
-        />
+        <div className=" text-right flex items-center space-x-4 lg:space-x-reverse flex-col  lg:flex-row-reverse flex-wrap  ">
+          <PrismicRichText
+            field={slice.primary.hero_title}
+            components={{
+              heading2: ({ children }) => (
+                <h2 className="text-white text-5xl md:text-5xl lg:text-7xl font-extrabold  lg:ml-4 ">
+                  {children}
+                </h2>
+              ),
+            }}
+          />
+          <PrismicRichText
+            field={slice.primary.hero_color}
+            components={{
+              paragraph: ({ children }) => (
+                <p className="text-alt text-5xl md:text-5xl lg:text-7xl font-extrabold">
+                  {children}
+                </p>
+              ),
+            }}
+          />
+        </div>
+
         <PrismicRichText
           field={slice.primary.rest_hero_title}
           components={{
             heading3: ({ children }) => (
-              <h3 className="text-white text-2xl md:text-5xl lg:text-7xl font-extrabold inline-block ">
+              <h3 className="text-white text-5xl lg:text-7xl font-extrabold inline-block ">
                 {children}
               </h3>
             ),
