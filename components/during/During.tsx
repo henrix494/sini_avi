@@ -36,27 +36,6 @@ export default function During({ slice }: { slice: DuringTherapySlice }) {
     }
   }, []);
 
-  const imgArr = [
-    {
-      src: "/during/one.jpg",
-      alt: "before section image",
-      title: "ליפניי",
-      text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam fuga, eius ut ipsam architecto accusamus velit quas necessitatibus optio perferendis corrupti minima impedit iste. Maiores eligendi illo reprehenderit optio suscipit?",
-    },
-    {
-      src: "/during/two.jpg",
-      alt: "during section image",
-      title: "בתור",
-      text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam fuga, eius ut ipsam architecto accusamus velit quas necessitatibus optio perferendis corrupti minima impedit iste. Maiores eligendi illo reprehenderit optio suscipit?",
-    },
-    {
-      src: "/during/three.jpg",
-      alt: "after section image",
-      title: "אחריי",
-      text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam fuga, eius ut ipsam architecto accusamus velit quas necessitatibus optio perferendis corrupti minima impedit iste. Maiores eligendi illo reprehenderit optio suscipit?",
-    },
-  ];
-
   return (
     <>
       <div
@@ -103,13 +82,35 @@ export default function During({ slice }: { slice: DuringTherapySlice }) {
           ref={cardContainerRef}
           className="flex lg:gap-10 gap-20 justify-between lg:w-[70%] max-lg:flex-col"
         >
-          {imgArr.map((item) => (
-            <Card key={item.alt}>
-              <Image src={item.src} width={400} height={400} alt={item.alt} />
-              <h3 className="text-[#381f28] text-[2rem] font-[700] leading-[1.3] mt-4">
-                {item.title}
-              </h3>
-              <p className="lg:w-[400px] text-center mt-10">{item.text}</p>
+          {slice.primary.cards?.map(({ image, title, text }, index) => (
+            <Card key={index}>
+              <Image
+                src={image.url || " "}
+                width={400}
+                height={400}
+                alt={image.alt || " "}
+              />
+              <PrismicRichText
+                field={title}
+                components={{
+                  heading3: ({ children }) => (
+                    <h3 className="text-[#381f28] text-[2rem] font-[700] leading-[1.3] mt-4">
+                      {children}
+                    </h3>
+                  ),
+                }}
+              />
+
+              <PrismicRichText
+                field={text}
+                components={{
+                  heading4: ({ children }) => (
+                    <h4 className="lg:w-[400px] text-center mt-10">
+                      {children}
+                    </h4>
+                  ),
+                }}
+              />
             </Card>
           ))}
         </div>

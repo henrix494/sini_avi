@@ -3,40 +3,7 @@
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
 		"primary": {
-			"title_color": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "heading3",
-						"content": {
-							"text": "Enough"
-						}
-					}
-				]
-			},
-			"title": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "heading4",
-						"content": {
-							"text": "Selection"
-						}
-					}
-				]
-			},
-			"description": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Minim cillum commodo et do qui anim anim. Officia culpa commodo ut fugiat cillum occaecat do aliqua consequat tempor sint veniam esse."
-						}
-					}
-				]
-			},
-			"cards": {
+			"card": {
 				"__TYPE__": "GroupContentType",
 				"value": [
 					{
@@ -47,13 +14,13 @@
 								{
 									"origin": {
 										"id": "main",
-										"url": "https://images.unsplash.com/photo-1547394765-185e1e68f34e",
-										"width": 6000,
-										"height": 4000
+										"url": "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa",
+										"width": 2747,
+										"height": 4120
 									},
-									"url": "https://images.unsplash.com/photo-1547394765-185e1e68f34e",
-									"width": 6000,
-									"height": 4000,
+									"url": "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa",
+									"width": 2747,
+									"height": 4120,
 									"edit": {
 										"zoom": 1,
 										"crop": {
@@ -76,7 +43,7 @@
 										{
 											"type": "heading3",
 											"content": {
-												"text": "Pupil"
+												"text": "Rubber"
 											}
 										}
 									]
@@ -90,7 +57,7 @@
 										{
 											"type": "heading4",
 											"content": {
-												"text": "Beauty"
+												"text": "Eight"
 											}
 										}
 									]

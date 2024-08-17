@@ -1,8 +1,8 @@
 {
-  "id": "during_therapy",
+  "id": "cards",
   "type": "SharedSlice",
-  "name": "DuringTherapy",
-  "description": "DuringTherapy",
+  "name": "Cards",
+  "description": "Cards",
   "variations": [
     {
       "id": "default",
@@ -12,37 +12,10 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
-        "title_color": {
-          "type": "StructuredText",
-          "config": {
-            "label": "title_color",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "heading3"
-          }
-        },
-        "title": {
-          "type": "StructuredText",
-          "config": {
-            "label": "title",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "heading4"
-          }
-        },
-        "description": {
-          "type": "StructuredText",
-          "config": {
-            "label": "description",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "paragraph"
-          }
-        },
-        "cards": {
+        "card": {
           "type": "Group",
           "config": {
-            "label": "Cards",
+            "label": "Card",
             "repeat": true,
             "fields": {
               "image": {

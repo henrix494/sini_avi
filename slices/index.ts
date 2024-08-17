@@ -3,6 +3,7 @@
 import dynamic from "next/dynamic";
 
 export const components = {
+  cards: dynamic(() => import("./Cards")),
   contact: dynamic(() => import("./Contact")),
   during_therapy: dynamic(() => import("./DuringTherapy")),
   get_back: dynamic(() => import("./GetBack")),

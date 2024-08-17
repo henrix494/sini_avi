@@ -179,6 +179,83 @@ export type SettingsDocument<Lang extends string = string> =
 export type AllDocumentTypes = HomepageDocument | SettingsDocument;
 
 /**
+ * Item in *Cards → Default → Primary → Card*
+ */
+export interface CardsSliceDefaultPrimaryCardItem {
+  /**
+   * image field in *Cards → Default → Primary → Card*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cards.default.primary.card[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * title field in *Cards → Default → Primary → Card*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cards.default.primary.card[].title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * text field in *Cards → Default → Primary → Card*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cards.default.primary.card[].text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *Cards → Default → Primary*
+ */
+export interface CardsSliceDefaultPrimary {
+  /**
+   * Card field in *Cards → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cards.default.primary.card[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  card: prismic.GroupField<Simplify<CardsSliceDefaultPrimaryCardItem>>;
+}
+
+/**
+ * Default variation for Cards Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CardsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<CardsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Cards*
+ */
+type CardsSliceVariation = CardsSliceDefault;
+
+/**
+ * Cards Shared Slice
+ *
+ * - **API ID**: `cards`
+ * - **Description**: Cards
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CardsSlice = prismic.SharedSlice<"cards", CardsSliceVariation>;
+
+/**
  * Default variation for Contact Slice
  *
  * - **API ID**: `default`
@@ -207,6 +284,41 @@ export type ContactSlice = prismic.SharedSlice<
   "contact",
   ContactSliceVariation
 >;
+
+/**
+ * Item in *DuringTherapy → Default → Primary → Cards*
+ */
+export interface DuringTherapySliceDefaultPrimaryCardsItem {
+  /**
+   * image field in *DuringTherapy → Default → Primary → Cards*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: during_therapy.default.primary.cards[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * title field in *DuringTherapy → Default → Primary → Cards*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: during_therapy.default.primary.cards[].title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * text field in *DuringTherapy → Default → Primary → Cards*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: during_therapy.default.primary.cards[].text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+}
 
 /**
  * Primary content in *DuringTherapy → Default → Primary*
@@ -241,6 +353,18 @@ export interface DuringTherapySliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   description: prismic.RichTextField;
+
+  /**
+   * Cards field in *DuringTherapy → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: during_therapy.default.primary.cards[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  cards: prismic.GroupField<
+    Simplify<DuringTherapySliceDefaultPrimaryCardsItem>
+  >;
 }
 
 /**
@@ -1037,10 +1161,16 @@ declare module "@prismicio/client" {
       SettingsDocumentData,
       SettingsDocumentDataNavigationItem,
       AllDocumentTypes,
+      CardsSlice,
+      CardsSliceDefaultPrimaryCardItem,
+      CardsSliceDefaultPrimary,
+      CardsSliceVariation,
+      CardsSliceDefault,
       ContactSlice,
       ContactSliceVariation,
       ContactSliceDefault,
       DuringTherapySlice,
+      DuringTherapySliceDefaultPrimaryCardsItem,
       DuringTherapySliceDefaultPrimary,
       DuringTherapySliceVariation,
       DuringTherapySliceDefault,
