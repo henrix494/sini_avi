@@ -8,6 +8,7 @@ export const components = {
   during_therapy: dynamic(() => import("./DuringTherapy")),
   get_back: dynamic(() => import("./GetBack")),
   hero: dynamic(() => import("./Hero")),
+  info_hero: dynamic(() => import("./InfoHero")),
   map: dynamic(() => import("./Map")),
   personalized: dynamic(() => import("./Personalized")),
 };
