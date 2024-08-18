@@ -39,12 +39,12 @@ export default function HeroComp({ slice }: HeroProps) {
         className="z-10 text-[white] text-center  opacity-0 max-lg:px-4 max-lg:flex max-lg:flex-col max-lg:items-center"
         style={{ transition: "opacity 0s" }}
       >
-        <div className=" text-right flex items-center space-x-4 lg:space-x-reverse flex-col  lg:flex-row-reverse flex-wrap  ">
+        <div className=" text-right flex items-center space-x-4 lg:space-x-reverse flex-col  lg:flex-row-reverse flex-wrap   ">
           <PrismicRichText
             field={slice.primary.hero_title}
             components={{
               heading2: ({ children }) => (
-                <h2 className="text-white text-5xl md:text-5xl lg:text-7xl font-extrabold  lg:ml-4 ">
+                <h2 className="text-white text-5xl md:text-5xl lg:text-6xl font-extrabold  lg:ml-4 ">
                   {children}
                 </h2>
               ),
@@ -54,7 +54,7 @@ export default function HeroComp({ slice }: HeroProps) {
             field={slice.primary.hero_color}
             components={{
               paragraph: ({ children }) => (
-                <p className="text-alt text-5xl md:text-5xl lg:text-7xl font-extrabold">
+                <p className="text-alt text-5xl md:text-5xl lg:text-6xl font-extrabold">
                   {children}
                 </p>
               ),
@@ -66,7 +66,7 @@ export default function HeroComp({ slice }: HeroProps) {
           field={slice.primary.rest_hero_title}
           components={{
             heading3: ({ children }) => (
-              <h3 className="text-white text-5xl lg:text-7xl font-extrabold inline-block ">
+              <h3 className="text-white text-5xl lg:text-5xl font-extrabold inline-block mt-7 ">
                 {children}
               </h3>
             ),
