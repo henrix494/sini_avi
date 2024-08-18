@@ -80,7 +80,7 @@ export default function During({ slice }: { slice: DuringTherapySlice }) {
         </div>
         <div
           ref={cardContainerRef}
-          className="flex lg:gap-10 gap-20 justify-between lg:w-[70%] max-lg:flex-col"
+          className="flex lg:gap-10 gap-20 justify-between  max-lg:flex-col"
         >
           {slice.primary.cards?.map(({ image, title, text }, index) => (
             <Card key={index}>
