@@ -44,7 +44,7 @@ export default function HeroComp({ slice }: HeroProps) {
             field={slice.primary.hero_title}
             components={{
               heading2: ({ children }) => (
-                <h2 className="text-white text-5xl md:text-5xl lg:text-6xl font-extrabold  lg:ml-4 ">
+                <h2 className="text-white text-3xl md:text-5xl lg:text-6xl font-extrabold  lg:ml-4 ">
                   {children}
                 </h2>
               ),
@@ -54,7 +54,7 @@ export default function HeroComp({ slice }: HeroProps) {
             field={slice.primary.hero_color}
             components={{
               paragraph: ({ children }) => (
-                <p className="text-alt text-5xl md:text-5xl lg:text-6xl font-extrabold">
+                <p className="text-alt text-3xl md:text-5xl lg:text-6xl font-extrabold">
                   {children}
                 </p>
               ),
@@ -66,7 +66,7 @@ export default function HeroComp({ slice }: HeroProps) {
           field={slice.primary.rest_hero_title}
           components={{
             heading3: ({ children }) => (
-              <h3 className="text-white text-5xl lg:text-5xl font-extrabold inline-block mt-7 ">
+              <h3 className="text-white text-2xl lg:text-5xl font-extrabold inline-block mt-7 ">
                 {children}
               </h3>
             ),
