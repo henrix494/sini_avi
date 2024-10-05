@@ -38,11 +38,8 @@ export default function During({ slice }: { slice: DuringTherapySlice }) {
 
   return (
     <>
-      <div
-        className="flex items-center lg:h-[900px] mt-10 flex-col gap-28"
-        dir="rtl"
-      >
-        <div className="flex justify-around lg:gap-20 gap-10 max-lg:flex-col max-lg:px-7">
+      <div className="flex items-center  mt-10 flex-col gap-28 " dir="rtl">
+        <div className="flex justify-around lg:gap-20 gap-10 max-lg:flex-col max-lg:px-7 ">
           <div>
             <PrismicRichText
               field={slice.primary.title_color}
@@ -80,7 +77,7 @@ export default function During({ slice }: { slice: DuringTherapySlice }) {
         </div>
         <div
           ref={cardContainerRef}
-          className="flex lg:gap-10 gap-20 justify-between  max-lg:flex-col"
+          className="flex lg:gap-10 gap-10 justify-between flex-wrap"
         >
           {slice.primary.cards?.map(({ image, title, text }, index) => (
             <Card key={index}>
@@ -89,25 +86,25 @@ export default function During({ slice }: { slice: DuringTherapySlice }) {
                 width={400}
                 height={400}
                 alt={image.alt || " "}
+                className="w-full h-auto object-cover" // Ensure the image is responsive
               />
               <PrismicRichText
                 field={title}
                 components={{
                   heading3: ({ children }) => (
-                    <h3 className="text-[#381f28] text-[2rem] font-[700] leading-[1.3] mt-4">
+                    <h3 className="text-[#381f28] text-[2rem] font-[700] leading-[1.3] mt-4 text-center  ">
+                      {" "}
+                      {/* Center the text */}
                       {children}
                     </h3>
                   ),
                 }}
               />
-
               <PrismicRichText
                 field={text}
                 components={{
                   heading4: ({ children }) => (
-                    <h4 className="lg:w-[400px] text-center mt-10">
-                      {children}
-                    </h4>
+                    <h4 className=" text-center mt-10 ">{children}</h4>
                   ),
                 }}
               />

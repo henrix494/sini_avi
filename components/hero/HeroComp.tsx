@@ -44,7 +44,7 @@ export default function HeroComp({ slice }: HeroProps) {
             field={slice.primary.hero_title}
             components={{
               heading2: ({ children }) => (
-                <h2 className="text-white text-3xl md:text-5xl lg:text-6xl font-extrabold  lg:ml-4 ">
+                <h2 className="text-white text-2xl md:text-5xl lg:text-6xl font-extrabold  lg:ml-4 ">
                   {children}
                 </h2>
               ),
@@ -89,7 +89,7 @@ export default function HeroComp({ slice }: HeroProps) {
             field={slice.primary.secound_text}
             components={{
               paragraph: ({ children }) => (
-                <p className="mt-7 text-xl  text-center lg:w-[900px]">
+                <p className="mt-7 text-xl  text-center lg:w-[900px] max-lg:hidden">
                   {children}
                 </p>
               ),

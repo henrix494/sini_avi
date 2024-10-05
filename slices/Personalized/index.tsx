@@ -13,6 +13,7 @@ export type PersonalizedProps = SliceComponentProps<Content.PersonalizedSlice>;
 const Personalized = ({ slice }: PersonalizedProps): JSX.Element => {
   return (
     <section
+      id={slice.primary.ids || ""}
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >

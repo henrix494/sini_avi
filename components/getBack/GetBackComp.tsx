@@ -7,6 +7,7 @@ import Btn from "../btn/Btn";
 export default function GetBackComp({ slice }: GetBackProps) {
   return (
     <div
+      id={slice.primary.ids || ""}
       className={` lg:h-[700px] flex items-center justify-center max-lg:mt-10 bg-[white] ${slice.variation === "bgGray" && "bg-alt-bg"} ${slice.variation === "bgGrayImageLeft" && "bg-alt-bg"}`}
     >
       <div

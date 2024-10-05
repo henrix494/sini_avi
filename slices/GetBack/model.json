@@ -63,6 +63,13 @@
             "constraint": {},
             "thumbnails": []
           }
+        },
+        "ids": {
+          "type": "Text",
+          "config": {
+            "label": "ids",
+            "placeholder": ""
+          }
         }
       },
       "items": {}
@@ -135,6 +142,13 @@
             "constraint": {},
             "thumbnails": []
           }
+        },
+        "ids": {
+          "type": "Text",
+          "config": {
+            "label": "ids",
+            "placeholder": ""
+          }
         }
       },
       "items": {}
@@ -198,6 +212,13 @@
             "constraint": {},
             "thumbnails": []
           }
+        },
+        "ids": {
+          "type": "Text",
+          "config": {
+            "label": "ids",
+            "placeholder": ""
+          }
         }
       },
       "items": {}
@@ -260,6 +281,13 @@
             "label": "underLine",
             "constraint": {},
             "thumbnails": []
+          }
+        },
+        "ids": {
+          "type": "Text",
+          "config": {
+            "label": "ids",
+            "placeholder": ""
           }
         }
       },

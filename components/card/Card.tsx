@@ -33,7 +33,7 @@ export default function Card({ children }: { children: ReactElement[] }) {
   return (
     <div
       ref={cardRef}
-      className="border-2 border-[white] p-2 shadow-2xl rounded-xl hover:border-2 hover:border-[#7f193e] flex flex-col items-center h-[550px]"
+      className="border-2 border-[white] p-2 shadow-2xl rounded-xl hover:border-2 hover:border-[#7f193e] flex flex-col items-center h-auto max-w-[350px] mx-auto mb-10 "
     >
       {children}
     </div>

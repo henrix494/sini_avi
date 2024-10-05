@@ -170,6 +170,13 @@
               }
             }
           }
+        },
+        "ids": {
+          "type": "Text",
+          "config": {
+            "label": "ids",
+            "placeholder": ""
+          }
         }
       },
       "items": {}
