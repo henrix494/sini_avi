@@ -10,7 +10,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const clinet = createClient();
   const page = await clinet.getSingle("settings");
   return {
-    title: page.data.site_title || "sini",
+    title: "TWC",
     description: page.data.meta_description,
     openGraph: {
       images: [page.data.og_image.url || ""],
