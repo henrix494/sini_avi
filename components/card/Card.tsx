@@ -11,7 +11,7 @@ export default function Card({ children }: { children: ReactElement[] }) {
     if (cardRef.current) {
       mm.add("(max-width: 800px)", () => {
         gsap.fromTo(
-          cardRef?.current?.children as any,
+          cardRef?.current as any,
           { opacity: 0, y: 50 },
           {
             opacity: 1,

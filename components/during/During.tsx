@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useLayoutEffect, useRef } from "react";
 import Image from "next/image";
 import Card from "../card/Card";
 import { DuringTherapySlice } from "@/prismicio-types";
@@ -11,6 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function During({ slice }: { slice: DuringTherapySlice }) {
   const cardContainerRef = useRef<HTMLDivElement>(null);
+  const eachCardRef = useRef<HTMLDivElement>(null);
   let mm = gsap.matchMedia();
   useEffect(() => {
     if (cardContainerRef.current) {
@@ -34,6 +35,28 @@ export default function During({ slice }: { slice: DuringTherapySlice }) {
         );
       });
     }
+  }, []);
+  useLayoutEffect(() => {
+    mm.add("(max-width: 800px)", () => {
+      if (eachCardRef.current) {
+        gsap.fromTo(
+          eachCardRef?.current,
+          { opacity: 0, y: 50 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: "power1.inOut",
+            scrollTrigger: {
+              trigger: eachCardRef.current,
+              start: "top 80%",
+              end: "bottom 20%",
+              toggleActions: "play none none reverse",
+            },
+          }
+        );
+      }
+    });
   }, []);
 
   return (
@@ -77,7 +100,7 @@ export default function During({ slice }: { slice: DuringTherapySlice }) {
         </div>
         <div
           ref={cardContainerRef}
-          className="flex lg:gap-10 gap-10 justify-between flex-wrap"
+          className="flex lg:gap-10 gap-10 justify-between flex-wrap "
         >
           {slice.primary.cards?.map(({ image, title, text }, index) => (
             <Card key={index}>
@@ -86,7 +109,7 @@ export default function During({ slice }: { slice: DuringTherapySlice }) {
                 width={400}
                 height={400}
                 alt={image.alt || " "}
-                className="w-full h-auto object-cover" // Ensure the image is responsive
+                className="w-full h-auto object-cover " // Ensure the image is responsive
               />
               <PrismicRichText
                 field={title}
