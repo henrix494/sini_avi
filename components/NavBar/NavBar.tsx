@@ -47,7 +47,7 @@ export default function NavBar({
           } lg:max-h-none lg:block`}
           style={{ zIndex: isHam ? 9 : -1 }}
         >
-          <div className="flex gap-10 max-lg:flex-col relative text-right ">
+          <div className="flex gap-10 max-lg:flex-col relative text-right px-4 pt-2 ">
             {navigation.map(({ link, label }: any) => (
               <PrismicNextLink
                 key={label}
